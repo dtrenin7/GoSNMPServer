@@ -284,6 +284,7 @@ func (t *MasterAgent) SyncConfig() error {
 }
 
 func (t *MasterAgent) findForSubAgent(community string) *SubAgent {
+	t.Logger.Infof("findForSubAgent(%s)", community)
 	if val, ok := t.priv.communityToSubAgent[community]; ok {
 		return val
 	} else {
